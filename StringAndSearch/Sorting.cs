@@ -93,6 +93,39 @@ namespace ConsoleApplication1
             a[j] = temp;
         }
 
+        public static void QuickSortCC(int[] a, int left, int right)
+        {
+            int index = PivotCC(a, left, right);
+            if (left < index - 1)
+            {
+                QuickSortCC(a, left, index - 1);
+            }
+            if (index < right)
+            {
+                QuickSortCC(a, index, right);
+            }
+        }
+
+        static int PivotCC(int[] a, int left, int right)
+        {
+            int pivot = a[(left + right) / 2];
+            while (left <= right)
+            {
+                while (a[left] < pivot)
+                    left++;
+                while (pivot < a[right])
+                    right--;
+
+                if (left <= right)
+                {
+                    Swap(a, left, right);
+                    left++;
+                    right--;
+                }
+            }
+            return left;
+        }
+
         public static void CountSort(int[] a, int n, int exp)
         {
             int[] output = new int[n];

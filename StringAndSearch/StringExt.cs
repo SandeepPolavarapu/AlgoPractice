@@ -72,7 +72,7 @@ namespace ConsoleApplication1
         }
         public static void PrefixStringEval()
         {
-            var myInput = System.Console.ReadLine().Trim();
+            var myInput = Console.ReadLine().Trim();
             int output = 0;
             string[] myInputArray = myInput.Split(' ');
             int input1 = int.Parse(myInputArray[1]);
@@ -96,6 +96,19 @@ namespace ConsoleApplication1
                     break;
             }
             System.Console.WriteLine(output);
+        }
+
+        public static bool IsUniqueChar(string s)
+        {
+            bool[] countP = new bool[MAX];
+            foreach (char c in s)
+            {
+                if (countP[c])
+                    return false;
+                else
+                    countP[c] = true;
+            }
+            return true;
         }
     }
 }
