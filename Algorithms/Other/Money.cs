@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace ConsoleApplication1
+namespace CodePractice
 {
     public class Money : IMoney
     {

@@ -53,9 +53,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\StringAndSearch\StringAndSearch.csproj">
+    <ProjectReference Include="..\Algorithms\Algorithms.csproj">
       <Project>{b67ac111-ccfe-4135-a8d9-8af87650e08e}</Project>
-      <Name>StringAndSearch</Name>
+      <Name>Algorithms</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

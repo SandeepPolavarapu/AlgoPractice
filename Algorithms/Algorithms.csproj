@@ -7,8 +7,8 @@
     <ProjectGuid>{B67AC111-CCFE-4135-A8D9-8AF87650E08E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApplication1</RootNamespace>
-    <AssemblyName>ConsoleApplication1</AssemblyName>
+    <RootNamespace>CodePractice</RootNamespace>
+    <AssemblyName>CodePractice</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,19 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Graph.cs" />
-    <Compile Include="IMoney.cs" />
-    <Compile Include="LinkedListExt.cs" />
-    <Compile Include="Money.cs" />
-    <Compile Include="MoneyBag.cs" />
-    <Compile Include="NumberExt.cs" />
+    <Compile Include="Graph\Graph.cs" />
+    <Compile Include="Other\IMoney.cs" />
+    <Compile Include="LinkedList\LinkedListExt.cs" />
+    <Compile Include="Other\Money.cs" />
+    <Compile Include="Other\MoneyBag.cs" />
+    <Compile Include="Other\NumberExt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueueExt.cs" />
-    <Compile Include="Sorting.cs" />
-    <Compile Include="StackExt.cs" />
-    <Compile Include="StringExt.cs" />
-    <Compile Include="Tree.cs" />
+    <Compile Include="Queue\QueueExt.cs" />
+    <Compile Include="Sorting\Sorting.cs" />
+    <Compile Include="Stack\StackExt.cs" />
+    <Compile Include="String\StringExt.cs" />
+    <Compile Include="Tree\Tree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

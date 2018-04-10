@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Text;
 
-namespace ConsoleApplication1
+namespace CodePractice
 {
     /// <summary>A MoneyBag defers exchange rate conversions.</summary>
     /// <remarks>For example adding 

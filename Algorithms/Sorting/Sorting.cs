@@ -1,5 +1,5 @@
 ﻿
-namespace ConsoleApplication1
+namespace CodePractice
 {
     public static class Sorting
     {
