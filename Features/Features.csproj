@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CoAndContraVariance.cs" />
     <Compile Include="Delegate.cs" />
+    <Compile Include="Inheritance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

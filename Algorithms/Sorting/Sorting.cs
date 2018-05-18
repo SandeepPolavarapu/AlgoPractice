@@ -3,6 +3,21 @@ namespace CodePractice
 {
     public static class Sorting
     {
+
+        public static void InsertionSort(int[] a)
+        {
+            for (int i = 1; i < a.Length; i++)
+            {
+                int j = i - 1;
+                int value = a[i];
+                while (j >= 0 && value < a[j])
+                {
+                    a[j + 1] = a[j];
+                    j = j - 1;
+                }
+                a[j + 1] = value;
+            }
+        }
         public static void MergeSort(int[] a, int start, int end)
         {
             if (start < end)

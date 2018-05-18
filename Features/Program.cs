@@ -6,7 +6,8 @@ namespace Features
     {
         static void Main(string[] args)
         {
-            Delegate ex = new Delegate();
+            //Delegate ex = new Delegate();
+            Inheritance.Run();
             Console.ReadLine();
         }
     }
