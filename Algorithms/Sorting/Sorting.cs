@@ -18,6 +18,47 @@ namespace CodePractice
                 a[j + 1] = value;
             }
         }
+
+        public static void SelectionSort(int[] a)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                int minIndex = i;
+                for (int j = i + 1; j < a.Length; j++)
+                {
+                    if (a[j] < a[minIndex])
+                        minIndex = j;
+                }
+                if (minIndex != i)
+                {
+                    int temp = a[i];
+                    a[i] = a[minIndex];
+                    a[minIndex] = temp;
+                }
+            }
+        }
+
+        public static void BubbleSort(int[] a)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                bool swapped = false;
+                for (int j = 0; j < a.Length - i; j++)
+                {
+                    if (a[j] > a[j + 1])
+                    {
+                        int temp = a[j + 1];
+                        a[j + 1] = a[j];
+                        a[j] = temp;
+                        swapped = true;
+                    }
+                }
+                if (!swapped)
+                    break;
+            }
+        }
+
+
         public static void MergeSort(int[] a, int start, int end)
         {
             if (start < end)
