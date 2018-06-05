@@ -1,5 +1,4 @@
-﻿
-using CodePractice.Tree;
+﻿using CodePractice.Tree;
 using System;
 
 namespace CodePractice
@@ -8,8 +7,11 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {
-            TreeAlgo();
+            //TreeAlgo();
+
+            HeapAlgo();
             Console.Read();
+
             //Console.WriteLine("Hello World!\n");
         }
 
@@ -59,6 +61,37 @@ namespace CodePractice
         {
             TreeExt.Execute();
 
+        }
+
+        static void StackAlgo()
+        {
+            StackExt se = new StackExt();
+
+            int t = Convert.ToInt32(Console.ReadLine());
+            for (int a0 = 0; a0 < t; a0++)
+            {
+                string expression = Console.ReadLine();
+                //Console.WriteLine(expression);
+                if (expression[0] == '1')
+                    se.Enqueue(Convert.ToInt32(expression.Substring(2)));
+                else if (expression == "2")
+                    se.Dequeue();
+                else
+                    Console.WriteLine(se.Top());
+            }
+        }
+
+        static void HeapAlgo()
+        {
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            Heap.Heap mh = new Heap.MaxHeap(n);
+            for (int i = 0; i < n; i++)
+            {
+                int aItem = Convert.ToInt32(Console.ReadLine());
+                mh.Add(aItem);
+                Console.WriteLine(mh.Poll());
+            }
         }
     }
 }

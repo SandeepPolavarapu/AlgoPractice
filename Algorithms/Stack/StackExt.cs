@@ -1,9 +1,40 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CodePractice
 {
     class StackExt
     {
+        Stack<int> s1 = new Stack<int>();
+        Stack<int> s2 = new Stack<int>();
+
+        public void Enqueue(int ele)
+        {
+            s1.Push(ele);
+        }
+
+        public int Dequeue()
+        {
+            MoveElements();
+            return s2.Pop();
+        }
+
+        public int Top()
+        {
+            MoveElements();
+            return s2.Peek();
+        }
+
+        private void MoveElements()
+        {
+            if (s2.Count == 0)
+            {
+                while (s1.Count != 0)
+                {
+                    s2.Push(s1.Pop());
+                }
+            }
+        }
     }
 
     public class MyStack<T>

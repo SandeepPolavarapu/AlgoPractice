@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Graph\Graph.cs" />
+    <Compile Include="Heap\Heap.cs" />
     <Compile Include="Other\IMoney.cs" />
     <Compile Include="LinkedList\LinkedListExt.cs" />
     <Compile Include="Other\Money.cs" />
@@ -58,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DP\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
