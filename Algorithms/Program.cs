@@ -8,8 +8,8 @@ namespace CodePractice
         static void Main(string[] args)
         {
             //TreeAlgo();
-
-            HeapAlgo();
+            TrieAlgo();
+            //HeapAlgo();
             Console.Read();
 
             //Console.WriteLine("Hello World!\n");
@@ -81,16 +81,116 @@ namespace CodePractice
             }
         }
 
+        static void TrieAlgo()
+        {
+            Trie t = new Trie();
+            t.CreateRoot();
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            for (int nItr = 0; nItr < n; nItr++)
+            {
+                string[] opContact = Console.ReadLine().Split(' ');
+
+                string op = opContact[0];
+
+                string contact = opContact[1];
+                switch (op)
+                {
+                    case "add":
+                        t.Add(contact.ToCharArray());
+                        break;
+                    case "find":
+                        Console.WriteLine(t.FindPrefix(contact.ToCharArray()));
+                        break;
+
+                }
+            }
+
+        }
+
+        static void AddNumber(int num, MinHeap min, MaxHeap max)
+        {
+            if (min.Length() == 0 || num < min.Peek())
+                min.Add(num);
+            else
+                max.Add(num);
+        }
+
+        static void ReBalance(MinHeap min, MaxHeap max)
+        {
+            if (min.Length() - max.Length() >= 2)
+            {
+                max.Add(min.Poll());
+            }
+            else if (max.Length() - min.Length() >= 2)
+            {
+                min.Add(max.Poll());
+            }
+        }
+
+        static decimal GetMedian(MinHeap min, MaxHeap max)
+        {
+            if (min.Length() == max.Length())
+                return Decimal.Divide(min.Peek() + max.Peek(), 2);
+            else if (min.Length() > max.Length())
+                return min.Peek();
+            else
+                return max.Peek();
+        }
+
         static void HeapAlgo()
         {
             int n = Convert.ToInt32(Console.ReadLine());
-
-            Heap.Heap mh = new Heap.MaxHeap(n);
+            decimal median;
+            MaxHeap max = new MaxHeap(n);
+            MinHeap min = new MinHeap(n);
             for (int i = 0; i < n; i++)
             {
                 int aItem = Convert.ToInt32(Console.ReadLine());
-                mh.Add(aItem);
-                Console.WriteLine(mh.Poll());
+                AddNumber(aItem, min, max);
+                ReBalance(min, max);
+                median = GetMedian(min, max);
+                //int diff = max.Length() - min.Length();
+                //switch (diff)
+                //{
+                //    case 0:
+                //        if (aItem < median)
+                //        {
+                //            max.Add(aItem);
+                //            median = max.Peek();
+                //        }
+                //        else
+                //        {
+                //            min.Add(aItem);
+                //            median = min.Peek();
+                //        }
+                //        break;
+                //    case 1:
+                //        if (aItem < median)
+                //        {
+                //            min.Add(max.Poll());
+                //            max.Add(aItem);
+                //        }
+                //        else
+                //        {
+                //            min.Add(aItem);
+                //        }
+                //        median = Decimal.Divide(min.Peek() + max.Peek(), 2);
+                //        break;
+                //    case -1:
+                //        if (aItem < median)
+                //        {
+                //            max.Add(aItem);
+                //        }
+                //        else
+                //        {
+                //            max.Add(min.Poll());
+                //            min.Add(aItem);
+                //        }
+                //        median = Decimal.Divide(min.Peek() + max.Peek(), 2);
+                //        break;
+                //}
+                Console.WriteLine("{0:N1}", median);
             }
         }
     }

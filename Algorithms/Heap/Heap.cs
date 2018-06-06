@@ -1,4 +1,4 @@
-﻿namespace CodePractice.Heap
+﻿namespace CodePractice
 {
 
     abstract class Heap
@@ -12,9 +12,14 @@
             a = new int[n];
         }
 
+        public int Length()
+        {
+            return curIndex;
+        }
+
         public int Peek()
         {
-            return a[curIndex];
+            return a[0];
         }
 
         public int Poll()
