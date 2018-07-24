@@ -7,8 +7,8 @@ namespace CodePractice
     {
         static void Main(string[] args)
         {
-            //TreeAlgo();
-            TrieAlgo();
+            TreeAlgo();
+            //TrieAlgo();
             //HeapAlgo();
             Console.Read();
 

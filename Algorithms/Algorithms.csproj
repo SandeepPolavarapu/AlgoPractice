@@ -56,6 +56,7 @@
     <Compile Include="Stack\StackExt.cs" />
     <Compile Include="String\StringExt.cs" />
     <Compile Include="Tree\Tree.cs" />
+    <Compile Include="Tree\TreeTraversal.cs" />
     <Compile Include="Trie\Trie.cs" />
   </ItemGroup>
   <ItemGroup>

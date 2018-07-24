@@ -61,6 +61,15 @@ namespace CodePractice.Tree
                 PrintGivenLevel(Root, i);
         }
 
+        public void PreOrder(Node root)
+        {
+            if (root == null)
+                return;
+            Console.Write(root.Data + " ");
+            PreOrder(root.Left);
+            PreOrder(root.Right);
+        }
+
         public void InOrder(Node root)
         {
             if (root == null)
@@ -68,6 +77,15 @@ namespace CodePractice.Tree
             InOrder(root.Left);
             Console.Write(root.Data + " ");
             InOrder(root.Right);
+        }
+
+        public void PostOrder(Node root)
+        {
+            if (root == null)
+                return;
+            PostOrder(root.Left);
+            PostOrder(root.Right);
+            Console.Write(root.Data + " ");
         }
 
         public Node Mirror(Node node)
@@ -100,11 +118,29 @@ namespace CodePractice.Tree
             Console.WriteLine("Level Order Traversal is : ");
             tree.PrintLevelOrder();
 
-            Console.WriteLine("\nInOrder Traversal is : ");
+            Console.WriteLine("\nPreOrder Recursive Traversal is : ");
+            tree.PreOrder(tree.Root);
+
+            Console.WriteLine("\nPreOrder Iterative Traversal is : ");
+            TreeTraversalIterative.PreOrder(tree.Root);
+
+            Console.WriteLine("\nPostOrder Recursive Traversal is : ");
+            tree.PostOrder(tree.Root);
+
+            Console.WriteLine("\nPostOrder Iterative Traversal is : ");
+            TreeTraversalIterative.PostOrder(tree.Root);
+
+            Console.WriteLine("\nInOrder Recursive Traversal is : ");
             tree.InOrder(tree.Root);
+
+            Console.WriteLine("\nInOrder Iterative Traversal is : ");
+            TreeTraversalIterative.InOrder(tree.Root);
+
             Console.WriteLine("\nInOrder Traversal of Mirror : ");
             tree.Mirror(tree.Root);
             tree.InOrder(tree.Root);
+
+
         }
     }
 }
