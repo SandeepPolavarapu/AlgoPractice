@@ -130,6 +130,9 @@ namespace CodePractice.Tree
             Console.WriteLine("\nPostOrder Iterative Traversal is : ");
             TreeTraversalIterative.PostOrder(tree.Root);
 
+            Console.WriteLine("\nPostOrder Iterative Traversal with one stack is : ");
+            TreeTraversalIterative.PostOrderWithOneStack(tree.Root);
+
             Console.WriteLine("\nInOrder Recursive Traversal is : ");
             tree.InOrder(tree.Root);
 
