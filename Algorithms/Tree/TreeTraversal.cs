@@ -103,8 +103,7 @@ namespace CodePractice.Tree
 
             MyStack<Node> s1 = new MyStack<Node>();
 
-            s1.Push(root);
-            Node current = root.Left;
+            Node current = root;
 
             while (current != null || !s1.IsEmpty())
             {
@@ -130,6 +129,79 @@ namespace CodePractice.Tree
                     else
                     {
                         current = temp;
+                    }
+                }
+            }
+        }
+
+        public static void MorrisPreOrderTraversal(Node root)
+        {
+            if (root == null)
+                return;
+
+            Node current = root;
+
+            while (current != null)
+            {
+                if (current.Left == null)
+                {
+                    Console.Write(current.Data + " ");
+                    current = current.Right;
+                }
+                else
+                {
+                    Node predecessor = current.Left;
+                    while (predecessor.Right != null && predecessor.Right != current)
+                    {
+                        predecessor = predecessor.Right;
+                    }
+
+                    if (predecessor.Right == null)
+                    {
+                        predecessor.Right = current;
+                        Console.Write(current.Data + " ");
+                        current = current.Left;
+                    }
+                    else
+                    {
+                        predecessor.Right = null;
+                        current = current.Right;
+                    }
+                }
+            }
+        }
+
+        public static void MorrisInOrderTraversal(Node root)
+        {
+            if (root == null)
+                return;
+
+            Node current = root;
+
+            while (current != null)
+            {
+                if (current.Left == null)
+                {
+                    Console.Write(current.Data + " ");
+                    current = current.Right;
+                }
+                else
+                {
+                    Node predecessor = current.Left;
+                    while (predecessor.Right != null && predecessor.Right != current)
+                    {
+                        predecessor = predecessor.Right;
+                    }
+                    if (predecessor.Right == null)
+                    {
+                        predecessor.Right = current;
+                        current = current.Left;
+                    }
+                    else
+                    {
+                        predecessor.Right = null;
+                        Console.Write(current.Data + " ");
+                        current = current.Right;
                     }
                 }
             }

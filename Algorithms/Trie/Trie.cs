@@ -119,6 +119,6 @@ namespace CodePractice
     {
         public Dictionary<char, TrieNode> children = new Dictionary<char, TrieNode>();
         public bool endOfWord;
-        public int size;
+        public int size; // This is to find count of words
     }
 }

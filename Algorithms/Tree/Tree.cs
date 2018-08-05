@@ -100,6 +100,20 @@ namespace CodePractice.Tree
 
             return node;
         }
+
+        public void SumOfPath(Node node, int sum)
+        {
+            if (node == null)
+                return;
+            else if (node.Left == null && node.Right == null)
+            {
+                Console.Write(node.Data + sum + " ");
+                return;
+            }
+
+            SumOfPath(node.Left, node.Data + sum);
+            SumOfPath(node.Right, node.Data + sum);
+        }
     }
 
     class TreeExt
@@ -115,7 +129,10 @@ namespace CodePractice.Tree
 
             Console.WriteLine("Tree Diameter is : {0}", tree.Diameter());
 
-            Console.WriteLine("Level Order Traversal is : ");
+            Console.WriteLine("Sum of paths : ");
+            tree.SumOfPath(tree.Root, 0);
+
+            Console.WriteLine("\nLevel Order Traversal is : ");
             tree.PrintLevelOrder();
 
             Console.WriteLine("\nPreOrder Recursive Traversal is : ");
@@ -123,6 +140,9 @@ namespace CodePractice.Tree
 
             Console.WriteLine("\nPreOrder Iterative Traversal is : ");
             TreeTraversalIterative.PreOrder(tree.Root);
+
+            Console.WriteLine("\nPreOrder Morris Traversal is : ");
+            TreeTraversalIterative.MorrisPreOrderTraversal(tree.Root);
 
             Console.WriteLine("\nPostOrder Recursive Traversal is : ");
             tree.PostOrder(tree.Root);
@@ -138,6 +158,9 @@ namespace CodePractice.Tree
 
             Console.WriteLine("\nInOrder Iterative Traversal is : ");
             TreeTraversalIterative.InOrder(tree.Root);
+
+            Console.WriteLine("\nInOrder Morris Traversal is : ");
+            TreeTraversalIterative.MorrisInOrderTraversal(tree.Root);
 
             Console.WriteLine("\nInOrder Traversal of Mirror : ");
             tree.Mirror(tree.Root);
